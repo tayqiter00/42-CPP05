@@ -6,7 +6,7 @@
 /*   By: qtay <qtay@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 15:47:53 by qtay              #+#    #+#             */
-/*   Updated: 2024/11/09 22:03:00 by qtay             ###   ########.fr       */
+/*   Updated: 2025/02/04 14:39:00 by qtay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int	main()
 	std::cout << "[ GENERAL ]" << std::endl;
 	{
 		Bureaucrat	b1("alice", 2); // Constructor
+		std::cout << b1 << "\n";
 		Bureaucrat	b2(b1); // Copy constructor
+		std::cout << b2 << "\n";
 		Bureaucrat	b3; 
-		
 		b3 = b2; // Copy assignment (notice how the name for b3 doesn't change)
 		std::cout << b3 << "\n";
 	}
@@ -28,7 +29,7 @@ int	main()
 	std::cout << "[ TEST 1: GRADE TOO LOW ]" << std::endl;
 	try
 	{
-		Bureaucrat a("Low", 0);
+		Bureaucrat a("Low", 151);
 		std::cout << a << '\n';
 	}
 	catch(const std::exception& e)
