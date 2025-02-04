@@ -6,7 +6,7 @@
 /*   By: qtay <qtay@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 15:02:25 by qtay              #+#    #+#             */
-/*   Updated: 2024/11/10 16:16:10 by qtay             ###   ########.fr       */
+/*   Updated: 2025/02/04 14:47:33 by qtay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,14 @@ Bureaucrat::Bureaucrat(std::string givenName, size_t givenGrade)
 	:_name(givenName)
 {
 		if (givenGrade > 150)
-			throw (Bureaucrat::GradeTooHighException());
-		else if (givenGrade < 1)
 			throw (Bureaucrat::GradeTooLowException());
+		else if (givenGrade < 1)
+			throw (Bureaucrat::GradeTooHighException());
 		else
 		{
 			this->_grade = givenGrade;
 			std::cout << "Bureaucrat parameterized constructor called\n";
 		}
-
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj)
